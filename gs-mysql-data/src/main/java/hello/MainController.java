@@ -18,6 +18,7 @@ public class MainController {
 	private UserRepository userRepository;
 	
 	@GetMapping(path="/add") // Map ONLY GET Requests
+	/* http://localhost:8090/demo/add?name=Mahesh&email=mm@gmail.com */
 	public @ResponseBody String addNewUser (@RequestParam String name
 			, @RequestParam String email) {
 		// @ResponseBody means the returned String is the response, not a view name
@@ -31,6 +32,7 @@ public class MainController {
 	}
 	
 	@GetMapping(path="/all")
+	/* http://localhost:8090/demo/all */
 	public @ResponseBody Iterable<User> getAllUsers() {
 		// This returns a JSON or XML with the users
 		return userRepository.findAll();
